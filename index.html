@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Lista de Presentes – Fernando & Thamiles</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- 1) Em HEAD ou logo antes do </body>, carregue o SDK -->
+<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script>
+  console.log('Initializing EmailJS with Public Key...');
+  emailjs.init("_DUdaeVfhVHnkL3YJ");
+</script>
+
+<!-- 2) Depois, seu pix.js -->
+<script src="js/pix.js"></script>
+</body>
+
+
 </head>
 <body>
   <header>
@@ -101,10 +114,10 @@ Jesus é nosso convidado de honra nesta celebração — é Ele quem guia nossos
 
         <!-- Exemplo de um cartão de presente -->
         <div class="card">
-          <img src="assets/images/cortina.png" alt="cortina">
-          <h3>Cortina Corta Luz Blackout 6,00m X 2,80m Para Trilho Comum - Branco Gelo</h3>
-          <p>Deixar nossa sala bonita para receber vocês.</p>
-          <p class="price">R$ 209,90</p>
+          <img src="assets/images/varal.png" alt="varal">
+          <h3>Varal De Chão Grande De Roupas</h3>
+          <p>Varal De Chão Varal Portátil</p>
+          <p class="price">R$ 78,00</p>
           <div class="actions">
             <a class="btn buy" href="https://link-para-comprar.com" target="_blank">Comprar Online</a>
             <button class="btn pix" data-pix="00020126580014br.gov.bcb.pix0125seuchavepix01234567890...">Pagar via Pix</button>
@@ -117,8 +130,18 @@ Jesus é nosso convidado de honra nesta celebração — é Ele quem guia nossos
   </main>
 
   <footer>
-    <p>Obrigado por fazer parte do nosso dia!</p>
+    <p>Obrigado por fazer parte da nossa história!</p>
   </footer>
+
+  <!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script>
+  // Substitua pelo seu ID de usuário EmailJS (crie gratuitamente em https://www.emailjs.com/)
+  (function(){
+    emailjs.init("_DUdaeVfhVHnkL3YJ");
+  })();
+</script>
+
 
   <script src="js/pix.js"></script>
 </body>
