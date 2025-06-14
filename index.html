@@ -133,6 +133,31 @@ Jesus é nosso convidado de honra nesta celebração — é Ele quem guia nossos
   emailjs.init("VZvIAybssV4_Sdqt6");
 </script>
 
+  <!-- Firebase v9 compat (Firestore) -->
+  <script type="module">
+    // 1) Importe do CDN
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    // 2) Sua configuração
+    const firebaseConfig = {
+  apiKey: "AIzaSyAWPad3rI2Qtq-CGa2MUpa3wJycSSxxUhU",
+  authDomain: "listapresentes-5bb01.firebaseapp.com",
+  projectId: "listapresentes-5bb01",
+  storageBucket: "listapresentes-5bb01.firebasestorage.app",
+  messagingSenderId: "391800249654",
+  appId: "1:391800249654:web:cd131b7896ba348bf26797",
+  measurementId: "G-YCCRPYF31N"
+    };
+
+    // 3) Inicializa o Firebase e o Firestore
+    const app = initializeApp(firebaseConfig);
+    window.db = getFirestore(app);   // expõe globalmente para usar em pix.js
+  </script>
+  <!-- Seu script de handlers -->
+  <script type="module" src="js/pix.js"></script>
+</body>
+</html>
 
 
 
