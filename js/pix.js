@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const serviceID  = 'service_z0i2wae';
   const templateID = 'template_tpponok';
 
+  // Função de envio de e-mail
   async function sendEmail(itemName, method) {
     try {
       const res = await emailjs.send(serviceID, templateID, {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Marca o card como enviado e dispara o email
   function marcarComoEnviado(card, title, method) {
     card.classList.add('disabled');
     const span = document.createElement('span');
@@ -27,27 +29,33 @@ document.addEventListener('DOMContentLoaded', () => {
     sendEmail(title, method);
   }
 
+  // Para cada botão, “buy” ou “pix”
   document.querySelectorAll('.card').forEach(card => {
-    const title  = card.querySelector('h3').textContent;
-    const buyBtn = card.querySelector('.buy');
-    const pixBtn = card.querySelector('.pix');
+    const title = card.querySelector('h3').textContent;
 
-    // Só adiciona o evento se houver um botão “buy”
-  if (buyBtn) {
-    buyBtn.addEventListener('click', e => {
-      e.preventDefault();
-      if (!confirm(`Confirmar compra de "${title}"?`)) return;
-      window.open(buyBtn.href, '_blank');
-      marcarComoEnviado(card, title, 'Compra Online');
-    });
-  }
+    // juntamos buy e pix num mesmo loop
+    card.querySelectorAll('.buy, .pix').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
 
-  // Pix sempre existe, mas também podemos checar:
-  if (pixBtn) {
-    pixBtn.addEventListener('click', () => {
-      if (!confirm(`Confirmar Pix para "${title}"?`)) return;
-      prompt('Copie nossa chave Pix:', pixBtn.dataset.pix);
-      marcarComoEnviado(card, title, 'Pix');
+        const isBuy = btn.classList.contains('buy');
+        const method = isBuy ? 'Compra Online' : 'Pix';
+
+        // chama o confirm
+        const msg = isBuy
+          ? `Confirmar compra de "${title}"?`
+          : `Confirmar Pix para "${title}"?`;
+        if (!confirm(msg)) return;
+
+        // ação de compra abre a URL, Pix mostra prompt
+        if (isBuy) {
+          window.open(btn.href, '_blank');
+        } else {
+          prompt('Copie nossa chave Pix:', btn.dataset.pix);
+        }
+
+        marcarComoEnviado(card, title, method);
+      });
     });
-  }
+  });
 });
