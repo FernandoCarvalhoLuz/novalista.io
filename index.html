@@ -46,6 +46,7 @@
       </p>
 
       <div class="cards">
+        <!-- Cesto Jolitex -->
         <div class="card" data-id="cesto-jolitex">
           <img src="assets/images/cesto.png" alt="Cesto Bambu Jolitex">
           <h3>Cesto Bambu Jolitex retangular com tampa bege</h3>
@@ -61,6 +62,7 @@
           </div>
         </div>
 
+        <!-- Garrafa Tramontina -->
         <div class="card" data-id="garrafa-tramontina">
           <img src="assets/images/garrafa.png" alt="Garrafa Térmica Tramontina">
           <h3>Garrafas Bule Térmico Exata 1 L – Tramontina (Bege)</h3>
@@ -76,6 +78,7 @@
           </div>
         </div>
 
+        <!-- Sapateira Safira -->
         <div class="card" data-id="sapateira-safira">
           <img src="assets/images/sapateiro.png" alt="Sapateira Safira">
           <h3>Sapateira 4 Portas Basculante Safira – Branco</h3>
@@ -91,6 +94,7 @@
           </div>
         </div>
 
+        <!-- Cortina Blackout -->
         <div class="card" data-id="cortina-blackout">
           <img src="assets/images/cortina.png" alt="Cortina Blackout">
           <h3>Cortina Corta-Luz Blackout 6,00×2,80 m – Branco Gelo</h3>
@@ -106,6 +110,7 @@
           </div>
         </div>
 
+        <!-- Varal de Chão -->
         <div class="card" data-id="varal-chao">
           <img src="assets/images/varal.png" alt="Varal de Chão">
           <h3>Varal de Chão Grande de Roupas</h3>
@@ -121,23 +126,23 @@
           </div>
         </div>
 
-
+        <!-- Quadro Decorativo -->
         <div class="card" data-id="quadro">
-          <img src="assets/images/quadro.png" alt="quadro">
-          <h3>Quadro Decorativo Foto Personalizado Vidro e Moldura Quarto Casal Sala</h3>
+          <img src="assets/images/quadro.png" alt="Quadro Decorativo">
+          <h3>Quadro Decorativo Foto Personalizado Vidro e Moldura</h3>
           <p>Para registrar nosso momento.</p>
           <p class="price">R$ 159,00</p>
           <div class="actions">
-            
             <button class="btn pix" data-pix="164.836.197-82">
               Pagar via Pix
             </button>
           </div>
         </div>
 
-<div class="card" data-id="taça">
-          <img src="assets/images/taça.png" alt="taça">
-          <h3>Taça Para Sobremesa Jogo 6un. Vidro 310ml Diamante Luxuoso Cor Transparente</h3>
+        <!-- Taça Sobremesa -->
+        <div class="card" data-id="taca-sobremesa">
+          <img src="assets/images/taca.png" alt="Taça para Sobremesa">
+          <h3>Taça para Sobremesa Jogo 6 un. – Vidro 310 ml</h3>
           <p>Comer um pavêzinho.</p>
           <p class="price">R$ 52,00</p>
           <div class="actions">
@@ -150,10 +155,11 @@
           </div>
         </div>
 
-        <div class="card" data-id="comoda">
-          <img src="assets/images/comoda.png" alt="comoda">
-          <h3>Cômoda 8 Gavetas Geórgia Freijó/off White Moval.</h3>
-          <p>.</p>
+        <!-- Cômoda Moval -->
+        <div class="card" data-id="comoda-moval">
+          <img src="assets/images/comoda.png" alt="Cômoda Moval">
+          <h3>Cômoda 8 Gavetas Geórgia Freijó/Off White – Moval</h3>
+          <p>Organizar nossos pertences.</p>
           <p class="price">R$ 669,00</p>
           <div class="actions">
             <a class="btn buy" href="https://mercadolivre.com/sec/25Mp3GG" target="_blank">
@@ -165,25 +171,6 @@
           </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
       </div>
     </section>
   </main>
@@ -192,39 +179,14 @@
     <p>Obrigado por fazer parte da nossa história!</p>
   </footer>
 
-  <!-- 1) EmailJS SDK v4 -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
+  <!-- EmailJS SDK v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     console.log('Initializing EmailJS v4 with Public Key...');
     emailjs.init("VZvIAybssV4_Sdqt6");
   </script>
 
-  <!-- 2) Firebase Web SDK (Firestore) -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-    import {
-      getFirestore,
-      doc, getDoc,
-      setDoc
-    } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyAWPad3rI2Qtq-CGa2MUpa3wJycSSxxUhU",
-      authDomain: "listapresentes-5bb01.firebaseapp.com",
-      projectId: "listapresentes-5bb01",
-      storageBucket: "listapresentes-5bb01.appspot.com",
-      messagingSenderId: "391800249654",
-      appId: "1:391800249654:web:cd131b7896ba348bf26797",
-      measurementId: "G-YCCRPYF31N"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    window.db = getFirestore(app);
-  </script>
-
-  <!-- 3) Seu script de lógica (pix.js) como módulo -->
-<script type="module" src="js/pix.js"></script>
+  <!-- Seu script de lógica (pix.js) normal -->
+  <script src="js/pix.js"></script>
 </body>
 </html>
