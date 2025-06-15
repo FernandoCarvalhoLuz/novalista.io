@@ -1,26 +1,20 @@
 // js/pix.js
 document.addEventListener('DOMContentLoaded', () => {
-  const EMAIL_TO    = 'fernandocarvalho.c@hotmail.com';
-  const serviceID   = 'service_z0i2wae';
-  const templateID  = 'template_tpponok';
+  const EMAIL_TO   = 'fernandocarvalho.c@hotmail.com';
+  const serviceID  = 'service_z0i2wae';
+  const templateID = 'template_tpponok';
 
   async function sendEmail(itemName, method) {
-    console.log('➤ sendEmail chamado', { itemName, method });
     try {
-      // <-- aqui NÃO passamos mais o `userID`
-      const res = await emailjs.send(
-        serviceID,
-        templateID,
-        {
-          to_email:       EMAIL_TO,
-          item_name:      itemName,
-          payment_method: method
-        }
-      );
-      console.log('✓ EmailJS response:', res);
+      const res = await emailjs.send(serviceID, templateID, {
+        to_email:       EMAIL_TO,
+        item_name:      itemName,
+        payment_method: method
+      });
+      console.log('✓ Email sent:', res);
     } catch (err) {
-      console.error('✗ EmailJS error:', err);
-      alert('Falha ao enviar e-mail: ' + (err.text || JSON.stringify(err)));
+      console.error('✗ Email error:', err);
+      alert('Falha ao enviar e-mail: ' + (err.text || err));
     }
   }
 
