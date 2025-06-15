@@ -32,17 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const buyBtn = card.querySelector('.buy');
     const pixBtn = card.querySelector('.pix');
 
+    // Só adiciona o evento se houver um botão “buy”
+  if (buyBtn) {
     buyBtn.addEventListener('click', e => {
       e.preventDefault();
       if (!confirm(`Confirmar compra de "${title}"?`)) return;
       window.open(buyBtn.href, '_blank');
       marcarComoEnviado(card, title, 'Compra Online');
     });
+  }
 
+  // Pix sempre existe, mas também podemos checar:
+  if (pixBtn) {
     pixBtn.addEventListener('click', () => {
       if (!confirm(`Confirmar Pix para "${title}"?`)) return;
       prompt('Copie nossa chave Pix:', pixBtn.dataset.pix);
       marcarComoEnviado(card, title, 'Pix');
     });
-  });
+  }
 });
