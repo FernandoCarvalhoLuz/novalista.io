@@ -87,4 +87,10 @@ footer {
   font-weight: bold;
   color: var(--gold);
 }
+.affiliate-note {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
 
