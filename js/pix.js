@@ -182,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
                   waBtn.textContent = 'Notificar os noivos via WhatsApp';
                   waBtn.style.pointerEvents = 'auto';
                   waBtn.style.opacity = '1';
+                  waBtn.style.display = 'block';
+                  waBtn.style.width = '100%';
+                  waBtn.style.margin = '16px 0 0 0';
                   card.querySelector('.actions').appendChild(waBtn);
                 }
               }, 300);
